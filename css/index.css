@@ -1,0 +1,1194 @@
+/*     VARIABLES   */
+@property --bg-color{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f6fafe;
+}
+@property --text-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #05469b;
+}
+@property --bg-second-color{
+    syntax: "<color>";
+    inherits: false;
+    initial-value:#6dbcf5;
+}
+@property --text-second-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0c2652 ;
+}
+@property --classic-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0c73ce ;
+}
+
+
+
+/*       BANNER OVERLAY       */
+.banner,.banner-overlay{ 
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100dvh;
+    object-fit: cover;
+    object-position: top;
+}
+.banner {
+    display: none;
+}
+.banner-overlay {
+    background: linear-gradient(#fffa, #fffa) , url(../img/index/banner-mobile-dos.jpg) center / cover fixed;
+}
+
+/*     BANNER CONTENIDO     */
+.banner-querie{ 
+    padding: 0 20px;
+    container-type: inline-size;
+}
+.banner-conten {
+    max-width: 1400px;
+    margin: auto;
+    height: calc(100vh - clamp(68px, 15vw, 90px));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-second-color);
+
+}
+.banner-text {
+    font-size: clamp(.85rem,1.9vw,1.1rem);
+    font-weight: 600;
+}
+.banner-text span {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.banner-title {
+    font-size: clamp(2.2rem,5vw,3.5rem);
+    color: var(--classic-color);
+    animation: text-wrap 3s infinite alternate both steps(6);
+    overflow: hidden;
+    position: relative;
+}
+.banner-title::before {
+    content: " ";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: var(--text-second-color);
+    right: 0;
+    animation: parpadear .2s infinite both;
+}
+.banner-title::after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    bottom: 0;
+    left: 0;
+    height: clamp(2px,50vw,4px);
+    background-color: var(--classic-color);
+    animation: subrayado-title 3s infinite alternate both;
+}
+
+.banner-title-container{
+    display: flex;
+    align-items: center;
+}
+.banner-title-img{
+    width: clamp(70px,9vw,95px);
+}
+.banner-title-img img {
+    max-width: 100%;
+}
+.banner-link {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    padding: 7px 18px;
+    transform: translateY(20px);
+    position: relative;
+    font-weight: 600;
+}
+.banner-link:hover {
+    background-color: var(--text-second-color);
+    color: #0FF2F2;
+}
+
+.banner-link::before, .banner-link::after {
+    content: "🧽";
+    font-size: 2.4rem;
+    position: absolute;
+    top: -35%;
+    display: none;
+}
+.banner-link:hover::before {
+    display: block;
+    animation: esponja-before 1.2s both;
+}
+.banner-link:hover::after{ 
+    display: block;
+    animation: esponja-after 1.2s both;
+}
+
+/*    BANNER SIGEM ENDS    */
+
+
+
+
+
+/*     OBJETIVO SIGEM    */
+.objetivo-querie {
+    container-type: inline-size;
+    height: clamp(530px,100vw,700px);
+    display: grid;
+    place-content: center;
+    background-color:#fff ;
+}
+.objetivo-container {
+    display: grid;
+    grid-template-columns:1fr;
+    gap: 20px;
+}
+
+.objetivo__title-container {
+    display: flex;
+    justify-content: center;
+}
+.objetivo-title {
+    color: var(--text-second-color);
+    font-size: clamp(1.5rem, 4.5vw, 2rem);
+    font-weight: 900;
+    position: relative;
+    text-align: center;
+}
+
+.objetivo__data-container {
+    color: var(--text-color);
+    font-weight: 500;
+    text-align: justify;
+    width: clamp(200px,85%,900px);
+    margin: 0 auto clamp(10px,3vw,30px);
+}
+.objetivo-data {
+    font-size: clamp(.85rem,1.5vw,1rem);
+}
+.objetivo__animation-container {
+    height: clamp(220px, 60vw, 370px);
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+.objetivo-animation {
+    height: 100%;
+    display: block;
+    position: absolute;
+    width: clamp(200px,80%,500px);
+    left: 0;
+    right: 0;
+    margin: auto;
+    object-fit: cover;
+}
+
+
+.sigem {
+    width: clamp(200px,80%,520px);
+    padding: 30px;
+    background-color: #fff;
+    box-sizing: content-box;
+    animation: sigem 5s infinite  both;
+    top: -30px;
+}
+.desorden {
+    animation: desorden 5s infinite both;
+}
+.orden {
+    animation: orden 5s infinite both;
+}
+.brillo {
+    animation: brillo 5s infinite both;
+}
+
+/*    OBJETIVO  SIGEM ENDS     */
+
+
+/*       PROMOCIONES U PAQUETES    */
+
+.promocion-querie{
+    container-type: inline-size;
+    padding: clamp(25px, 8vw, 50px) 20px;
+    min-height: 70dvh;
+    display: grid;
+    place-content: center;
+    gap:65px;
+    width: 100%;
+    background:  linear-gradient(#f6fafecf, #f6fafecf) ,url(../img/generales/fondo-limpieza.jpg);
+    background-attachment: fixed;
+
+}
+
+.promocion-container {
+    display: grid;
+    grid-template-columns: clamp(200px,90%,350px);
+    grid-template-areas:
+    "treintacinco"
+    "treinta"
+    "veinte" 
+    ;
+    gap: 40px;
+    justify-content: center;
+}
+.promocion-title-principal {
+    font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+    color: var(--text-color);
+    text-align: center;
+    font-weight: 900;
+}
+.promocion {
+    background-color: #fff;
+    box-shadow: 0 0 7px 0 #05469b52;
+    border-radius: 4px;
+    color:var(--text-color);
+    padding: 15px 20px clamp(15px,3.5vw, 30px);
+    animation: aparecer-promo both;
+    animation-timeline: view();
+    animation-range: entry-crossing 20% entry-crossing 60%;
+    display: grid;
+    gap: 15px;
+    font-weight: 500;
+    position: relative;
+    justify-items: center;
+    transition: transform .3s;
+}
+.promocion-text{
+    font-size: .85rem;
+    text-align: center;
+}
+.promocion-data {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #05469b6f;
+    border-left: none;
+    border-right: none;
+    padding: 20px 0;
+    margin: 10px 0;
+}
+.promocion-list {
+    list-style: none;
+}
+.promocion-title {
+    text-align: center;
+    font-size: clamp(1.3rem,3.5vw, 1.5rem);
+    color: var(--text-second-color);
+    font-weight: 800;
+}
+.promocion-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.fa-circle-check {
+    color: #2a2;
+}
+.tres-cinco {
+    grid-area: treintacinco;
+}
+.tres-cinco::before {
+    content: "¡LO MAS VENDIDO!";
+    position: absolute;
+    transform: translateY(-30px);
+    background-color: #0c2652;
+    padding: 5px 10%;
+    color: #0FF2F2;
+    border-radius: 5px 5px 0 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.tres {
+    grid-area: treinta;
+}
+.dos {
+    grid-area: veinte;
+}
+.promocion__img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.descuento {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    color:#0FF2F2;
+    background-color: var(--text-second-color);
+    padding:23px 12px;
+    font-size: clamp(1rem,3.5vw, 2rem);
+    clip-path: polygon(7% 52%, 0 19%, 31% 16%, 50% 0, 69% 16%, 100% 18%, 93% 50%, 100% 76%, 70% 79%, 51% 100%, 32% 81%, 0 79%);
+    right: -10%;
+    top: -4%;
+}
+.promocion-precio {
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-second-color);
+}
+.precio-new {
+    font-size: 2rem;
+    display: block;
+}
+
+.precio-back {
+    font-size: .85rem;
+    font-weight: 500;
+    text-decoration: line-through;
+}
+.promocion-link {
+    color: var(--bg-color);
+    background-color:var(--text-second-color) ;
+    display: block;
+    padding: 8px clamp(7px,.9vw,20px);
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    border-radius: 3px;
+}
+.promocion:hover .promocion-link {
+    color: #0FF2F2;
+}
+.promo-link-container::before {
+    content: "🧽";
+    font-size: 2.4rem;
+    position: absolute;
+    top: -35%;
+    text-align: center;
+    left: 0;
+    animation: promo-link-cell both;
+    animation-timeline: view() ;
+    animation-range: contain 40% contain 60%;
+    z-index: 1;
+}
+.promo-link-container {
+    position: relative;
+}
+
+/*     PROMOCIONES U PAQUETES ENDS     */
+
+
+/*     EQUIPO DE TRABAJO SIGEM*/
+
+.equipo-querie {
+    container-type: inline-size;
+    padding: clamp(25px, 8vw, 50px) 20px;
+    background:#0d2750;
+    min-height: 65dvh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+}
+.equipo-container {
+    max-width: 1400px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: clamp(150px, 50vw, 300px);
+    grid-auto-rows: clamp(150px, 50vw, 300px);
+    gap: 30px;
+
+}
+.equipo {
+    animation: aparecer-equipo both;
+    animation-timeline: view();
+    animation-range: entry-crossing 40% entry-crossing 120%;
+    position: relative;
+    cursor: text;
+}
+.equipo::after {
+    content: " ";
+    position: absolute;
+    width: 85%;
+    height: 85%;
+    background-color: #fff2;
+    outline: 2px solid #fff2;
+    outline-offset: 3px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+.equipo::before {
+    content: "👆";
+    position: absolute;
+    font-size: 4rem;
+    display: grid;
+    height: 80%;
+    width: 100%;
+    place-content: center;
+    filter: invert(.8);
+    opacity: .9;
+    animation: equipo-pulsar 5s infinite both;
+}
+
+.equipo:not(:hover)::before{
+    z-index: 10;
+
+}
+.equipo-title-principal {
+    text-align: center;
+    color: var(--bg-color);
+    font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+    margin-bottom: 50px;
+    font-weight: 900;
+    position: relative;
+}
+.equipo-title-principal::before, .equipo-title-principal::after {
+    content: " ";
+    height: 2px;
+    background-color: var(--bg-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.equipo-title-principal::before {
+    animation: equipo-title-before both;
+    bottom: -3px;
+    animation-timeline: view();
+    animation-range: cover 40% cover 60%;
+}
+
+.equipo-title-principal::after {
+    animation: equipo-title-after both;
+    bottom: -10px;
+    animation-timeline: view();
+    animation-range: cover 40% cover 60%;
+}
+
+.equipo-title, .equipo__data-content {
+    position: absolute;
+}
+.equipo-title {
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: end;
+    background: linear-gradient(to top, #000b 10%, transparent 50%);
+    color: var(--bg-color);
+    padding: 8px 10px;
+    font-size: clamp(1.2rem,3vw,1.5rem); 
+}
+.equipo-data::marker {
+    content: "🧽";
+}
+.equipo__img-container, .equipo-title {
+    transition: transform 1s, opacity 1s;    
+    transform: perspective(2500px) rotateY(0);
+}
+.equipo:hover :is(.equipo__img-container, .equipo-title ){
+    transform: perspective(2500px) rotateY(180deg);
+}
+.equipo:hover .equipo-title{
+    opacity: 0;
+}
+.equipo__data-content {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: clamp(5px, 1vw, 15px);
+    color: var(--text-second-color);
+    font-weight: 700;
+    font-size: .85rem;
+    background-color: #fffb;
+    transition: transform 1s;
+    outline: 4px solid var(--text-second-color);
+    outline-offset: -7px;
+    transform: perspective(2500px) rotateY(180deg);
+    backface-visibility: hidden;
+    backdrop-filter: blur(10px);
+    padding: 15px;
+}
+.equipo-data-title {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    font-weight: 800;
+}
+.equipo-data {
+    text-transform: capitalize;
+    color: var(--text-color);
+}
+.equipo:hover .equipo__data-content {
+    transform: perspective(2500px) rotateY(360deg);
+}
+
+.equipo__img-container img, .equipo__img-container {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.equipo-data-list {
+    margin:auto;
+}
+
+/*     EQUIPO DE TRABAJO SIGEM ENDS    */
+
+
+/*     CONTRATO SIGEM     */
+
+.contrato-querie {
+    container-type: inline-size;
+    padding: clamp(25px, 8vw, 50px) 20px;
+    min-height: 55dvh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background:  linear-gradient(#f6fafebf, #f6fafebf) ,url(../img/generales/fondo-limpieza.jpg);
+    background-attachment: fixed;
+}
+.contrato-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-color);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 4.5vw, 2.5rem);
+}
+.contrato-subtitle{ 
+    color: var(--text-color);
+}
+.contrato-skill{
+    margin-bottom: 30px;
+}
+
+
+.contrato-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.contrato__img-container {
+    display: none;
+}
+.contrato-skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-second-color);
+    gap: 10px;
+}
+
+.contrato-skill-data {
+    max-width: 230px;
+}
+.contrato-text {
+    font-size: .85rem;
+    font-weight: 600;
+}
+.contrato-skill i {
+    border-right: 2px solid var(--text-second-color);
+    font-size: clamp(1.6rem, 4vw, 3.3rem);
+    padding-right: 15px;
+    color: var(--text-color);
+    
+}
+
+/*     CONTRATO SIGEM ENDS     */
+
+
+
+/*    CLIENTE SIGEM    */
+.cliente-querie {
+    container-type: inline-size;
+    padding: clamp(20px, 3vw, 50px) 20px;
+    background-color: var(--text-second-color);
+}
+.cliente-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 1400px;
+    margin: auto;
+}
+.cliente-img-container {
+    position: relative;
+    width: clamp(200px, 85%, 600px);
+    margin: auto;   
+    overflow: hidden;
+}
+.cliente-img {
+    display: flex;
+    max-height: clamp(150px, 20vw,230px);
+    overflow: auto;
+    scroll-snap-type: x mandatory;
+}
+.cliente-img-container img {
+    min-width: 100%;
+    min-height: 100%;
+    display: block;
+    scroll-snap-align: start;
+    object-fit: cover;
+
+}
+.cliente-img-container i {
+    user-select: none;
+    position: fixed;
+    display: block;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    background-color: #fffa;
+    border-radius: 50%;
+    left: 12%;
+    padding: 7px 12px;
+    top: 60%;
+    cursor: pointer;
+}
+.cliente-img-container i:last-child {
+    right: 12%;
+    left: auto;
+}
+.cliente-data {
+    text-align: center;
+}
+.cliente-data-text{
+    font-size: clamp(1.1rem , 2vw, 1.5rem);
+    font-weight: 600;
+    color: var(--bg-color);
+}
+.cliente-data-title {
+    color: var(--bg-second-color);
+    display: inline-block;
+    font-size: clamp(1.5rem,4vw, 3.5rem);
+    font-weight: 800;
+    width: 100%;
+}
+
+
+/*   CLIENTE SIGEM ENDS     */
+
+
+
+/*     PREGUNTAS FRECUENTES    */
+
+.pregunta-querie {
+    container-type: inline-size;
+    padding: clamp(25px, 8vw, 50px) 20px;
+}
+.pregunta-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    gap: 8px;
+}
+.pregunta-encabezado {
+    width: clamp(200px, 100%, 800px);
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    margin: 0 auto 30px;
+}
+.pregunta-title {
+    color: var(--text-second-color);
+    font-weight: 900;
+    font-size: clamp(1.4rem, 4.5vw, 2rem);
+}
+.pregunta-text {
+    color: var(--text-color);
+    font-weight: 500;
+    width: 80%;
+    font-size: clamp(.85rem,1.5vw,1rem);
+}
+.pregunta {
+    max-height:75px;
+    overflow: hidden;
+    transition: max-height 2s;
+    max-width: 1000px;
+    width: 100%;
+    font-weight: 700;
+    border-bottom: 2px solid var(--text-color);
+    margin: auto;
+    animation: aparecer-pregunta both;
+    animation-timeline: view();
+    animation-range: cover 15% cover 25%;
+}
+
+.pregunta[open] {
+    max-height: 450px;
+}
+.pregunta[open] .pregunta-name {
+    color: var(--classic-color);
+}
+.pregunta-respuesta {
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+.pregunta__respuesta-text {
+    animation: respuesta-aparecer .6s both;
+    font-weight: 500;
+    font-size: clamp(.85rem, 1.5vw, 1rem);
+    color: var(--text-second-color);
+}
+
+.pregunta-name {
+    color: var(--text-color);
+    position: relative;
+    cursor: pointer;
+    padding: 18px 30px 18px 0;
+    font-size: clamp(1rem , 2vw, 1.1rem);
+    user-select: none;
+}
+.pregunta-name::marker{
+    content: " ";
+}
+.pregunta-name::before {
+    content: "+";
+    position: absolute;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 5px;
+}
+.pregunta[open] .pregunta-name::before {
+    content: "-";
+    right: 8px;
+    color: var(--text-color);
+}
+/*   PREGUNTAS FRECUENTES SIGEM   */
+
+
+
+
+
+/*       MEIDA QUERIES SIGEM     */
+@media screen and (min-width:550px) {
+    .equipo-container  {
+        grid-template-columns: repeat(2,1fr);
+    }
+    .equipo:last-child {
+        grid-column-end:span 2;
+    }
+    .contrato-container {
+        display: flex;
+        gap: 10px;
+    }
+    .pregunta {
+        max-height: 60px;
+        transition: max-height 1s;
+    }
+    .pregunta[open]{
+        max-height: 210px;
+    }
+
+    .cliente-img-container img {
+        min-width: 50% ;
+    }
+}
+@media screen and (min-width:800px) {
+    .banner-overlay {
+        background: #fffa;
+    }
+    .banner {
+        display: block;
+        object-position: center;
+    }
+    .promocion-querie {
+        gap: 90px;
+        padding-bottom: 100px;
+    }
+    .promocion-container {
+        grid-template-columns:repeat(3,1fr);
+        grid-template-areas:
+        "veinte treintacinco treinta"
+        ;
+        gap: 20px;
+        animation: aparecer-promo both;
+        animation-timeline: view();
+        animation-range: entry-crossing 20% entry-crossing 60%;
+    }
+    .promocion {
+        width:clamp(200px,100%,400px);
+        animation: none;
+    }
+    .promocion-title {
+        font-size: clamp(1.3rem,2vw,1.5rem);
+    }
+    .descuento {
+        font-size: clamp(1rem,1.5vw,1.5rem);
+        right: 0;
+        top: 50px;
+        padding:15px 7px;
+    }
+    .promocion__img-container img {
+        height: 180px;
+    }
+    .promocion-container:hover .promocion{
+        opacity: .5;
+        transform: scaleY(1);
+    }
+    .promocion-container:hover .promocion:hover {
+        opacity: 1;
+        transform: scaleY(1.1);
+    }
+    .promo-link-container::before {
+        opacity: 0;
+        animation: none;
+        z-index: -1;
+    }
+    .tres-cinco {
+        transform: scaleY(1.1);
+    }
+    .tres-cinco::before {
+        font-size: 1.1rem;
+        transform: translateY(-32px);
+    }
+    .promocion:hover .promo-link-container::before{ 
+        opacity: 1;
+        transition: opacity .3s;
+        transform:translate(-50%);
+        animation: promo-link .6s  both;
+        z-index: 1;
+    }
+    .equipo-container  {
+        grid-template-columns: repeat(4,1fr);
+        gap: 15px;
+    }
+    .equipo {
+        animation: aparecer-equipo both;
+        animation-timeline: view();
+        animation-range: entry-crossing 35% entry-crossing 80%;
+    }
+    .equipo::before {
+        display: none;
+    }
+    .equipo-data-title {
+        font-size: clamp(1rem, 1.5vw, 1.3rem);
+    }
+    .equipo-data {
+        font-size: clamp(.85rem, .9vw, 1rem);
+    }
+    .equipo:nth-child(4) {
+        grid-area: 1 / 2 /span 2 /span 2;
+    }
+    .equipo:last-child {
+        grid-column-end: span 1;
+    }
+    .contrato-container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+        background: none;
+    }
+    .contrato__img-container {
+        display: block;
+        flex: .65;
+        min-width: 250px;
+    }
+    .contrato__img-container img {
+        max-width: 100%;
+        transform: translateY(clamp(0px, 2vw, 30px));
+    }
+    .contrato__skill-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .contrato-direccion {
+        direction: rtl;
+    }
+    .contrato-direccion .contrato-skill i {
+        border: none;
+        border-left: 2px solid var(--text-second-color);
+        padding-right: 0;
+        padding-left: 15px;
+    }
+    .cliente-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        gap: 40px;
+    }
+    .cliente-img-container {
+        margin: 0;
+    }
+    .cliente-data {
+        max-width: 330px;
+    }
+    .cliente-img-container i {
+        position: absolute;
+        left: 0;
+        top: 40%;
+        font-size: 2rem;
+    }
+    .cliente-img-container i:last-child {
+        right: 0;
+    }
+}
+
+/*     ANIMACIONES INDEX SIGEM   */
+@keyframes esponja-after{ 
+    0%{
+        right: -50%;
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+    40% {
+        right: 100%;
+        opacity: 1;
+        transform: rotateY(180deg);
+    }
+    100% {
+        right:85%;
+        opacity: 1;
+        transform: rotateY(720deg);
+    }
+}
+@keyframes esponja-before{ 
+    0%{
+        left: -50%;
+        transform: rotateY(0);
+        opacity: 0;
+    }
+    40% {
+        left: 100%;
+        opacity: 1;
+        transform: rotateY(0);
+    }
+    100% {
+        left:85%;
+        opacity: 1;
+        transform: rotateY(540deg);
+    }
+}
+@keyframes subrayado-title{ 
+    0%{
+        width: 0;
+    }
+    35% {
+        width: 0;
+    }
+    75% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+@keyframes parpadear {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes text-wrap {
+    0%{
+        width: 0;
+    }
+    20% {
+        width: 100%;
+    }
+    100%{
+        width: 100%;
+    }
+}
+@keyframes sigem {
+    0%{
+        transform: translate(-150%);
+    }
+    10% {
+        transform: translate(-150%);
+    }
+    30%{
+        transform: rotateY(0) translate(0);
+    }
+    40%{
+        transform: rotateY(360deg) ;
+    }
+    45% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    55% {
+        transform: rotate(5deg) ;
+    }
+    60% {
+        transform: rotate(0) scale(1);
+    }
+    65% {
+        transform: scale(1.2);
+    }
+    70% {
+        transform: scale(1) translate(0);
+    }
+    80% {
+        transform: translate(150%);
+    }
+    100% {
+        transform: translate(150%);
+    }
+}
+@keyframes desorden {
+    0%{
+        opacity: 1;
+    }
+    33% {
+        transform: rotateX(0);
+        opacity: 1;
+    }
+    35% {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes brillo {
+    0%{
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    72% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes aparecer-promo {
+    0%{
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes promo-link-cell {
+    0% {
+        transform: translate(0) rotate(-20deg);
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-60%) rotate(-20deg);
+    }
+}
+@keyframes promo-link{
+    0% {
+        transform: translate(0);
+    }
+    60% {
+        transform: translate(-50%) rotateY(0);
+    }
+    100% {
+        transform: translate(-50%) rotateY(720deg);
+    }
+}
+@keyframes aparecer-equipo{
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes equipo-pulsar {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+    5% {
+        opacity: 1;
+    }
+    10% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(.85);
+    }
+    20% {
+        transform: scale(1);
+    }
+    25% {
+        opacity: 1;
+    }
+    30%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes equipo-title-before {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        width: 90%;
+    }
+}
+@keyframes equipo-title-after {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+        width: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        width: 70%;
+    }
+}
+@keyframes aparecer-pregunta {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes respuesta-aparecer {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px) ;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

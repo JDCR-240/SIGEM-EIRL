@@ -1,0 +1,648 @@
+/*     VARIABLES   */
+@property --bg-color{
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #f6fafe;
+}
+@property --text-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #05469b;
+}
+@property --bg-second-color{
+    syntax: "<color>";
+    inherits: false;
+    initial-value:#6dbcf5;
+}
+@property --text-second-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0c2652 ;
+}
+@property --classic-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #0c73ce ;
+}
+/*   VARIABLES ENDS     */
+
+
+
+/*   VALORES GENERALES    */
+.nav-querie {
+    position: relative;
+    animation: none;
+    container-type: inline-size;
+}
+.nav-container {
+    max-width: 1400px;
+}
+.nav-link::after {
+    animation: none;
+    background-color: var(--text-color);
+}
+.link-resalta .nav-link::after{ 
+    animation: none;
+    width: 50%;
+    background-color: var(--text-second-color);
+}
+.link-resalta {
+    animation: none;
+}
+.nav__img-container img{
+    animation: none;
+}
+/*    VALORES GENERALES ENDS      */
+
+
+
+/*     BANNER SIGEM*/
+.banner-overlay{
+    background: linear-gradient( to right ,#fff9, #fff9) , url(../img/servicios/banner\ SIGEM.jpg) center 40% / cover fixed; 
+}
+.banner-querie {
+    container-type: inline-size;
+    padding: 20px;
+}
+.banner-container {
+    min-height: 25vh;
+    display: grid;
+    align-content: center;
+    max-width: 1500px;
+    margin: auto;
+    text-align: center;
+}
+.banner-title {
+    color: var(--text-color);
+    font-weight: 800;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+.banner-text {
+    color: var(--text-second-color);
+    font-weight: 600;
+    font-size: clamp(.85rem, 2vw, 1.1rem);
+}
+.banner-link {
+    margin-top: 20px;
+}
+/*    BANNER SIGEM ENS   */
+
+
+
+
+/*      SERVICIOS SIGEM    */
+main {
+    container-type: inline-size;
+    max-width: 1500px;
+    margin: auto;
+    background-color: var(--bg-color);
+    box-shadow: 0 0 5px 0 #0002;
+}
+.servicio {
+    border-bottom: clamp(10px, 2vw, 20px) solid var(--classic-color);
+}
+.servicio:last-child{
+    border-bottom: none;
+}
+input[type="checkbox"] {
+    display: none;
+}
+:root:has(input[type="checkbox"]:checked) {
+    overflow: hidden;
+}
+:root:has(#checkbox-chat:checked) {
+    overflow: auto;
+}
+
+
+
+
+/*    SLOGAN SIGEM    */
+.slogan-container {
+    background-color: var(--classic-color);
+    padding: 7px 5px 7px 15px;
+    font-size: .9rem;
+    color: var(--bg-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    box-shadow: 0 0 10px 0 #0005;
+}
+.slogan-desktop {
+    display: none;
+}
+.slogan-container i {
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+    padding: 1px 0 1px 5px;
+    cursor: pointer;
+}
+.sidebar-buttom-close i {
+    display: none;
+}
+.container-general-servicio:has(#checkbox-sidebar:checked) .sidebar-buttom  {
+    display: none;
+} 
+.container-general-servicio:has(#checkbox-sidebar:checked) .sidebar-buttom-close i {
+    display: inline-block;
+    padding: 1px 0 ;
+}
+/*    SLOGAN SIGEM ENDS     */
+
+
+
+
+/*     SIDEBARMENU    */
+.sidebarmenu-container {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+.sidebarmenu-overlay {
+    background-color: #2229;
+    display: none;
+    position: absolute;
+    width: 100%;
+    animation: opacity-sidebarmenu .3s both;
+
+}
+.sidebarmenu {
+    background-color: #fff;
+    height: 100dvh;
+    width: clamp(200px, 70% , 300px);
+    padding: 40px 20px;
+    animation: aparecer-sidebar .6s .1s both;
+    display: grid;
+    gap: 35px;
+    align-content: start;
+    justify-content: center;
+}
+.sidebar-title {
+    font-size: clamp(1rem, 4.5vw, 1.3rem);
+    color: var(--classic-color);
+
+}
+.sidebar-list {
+    list-style: none;
+    border-left: 1px solid #0c26524f;
+    padding-left: 20px;
+    display: grid;
+    gap: 17px;
+}
+.sidebar-link {
+    text-decoration: none;
+    color: var(--text-second-color);
+    font-weight:600;
+}
+.sidebar-link:hover {
+    color: var(--classic-color);
+}
+#checkbox-sidebar:checked ~ .sidebarmenu-overlay {
+    display: block;
+}
+/*    SIDEBARMENU ENDS   */
+
+
+
+
+/*     CARDS --- DATA     */
+.hogar-card-container {
+    background: linear-gradient(#0006, #0006), url(../img/servicios/hogar/fondo.jpg) center / cover;
+}
+.hospital-card-container {
+    background: linear-gradient(#0006, #0006), url(../img/servicios/hospital/fondo.jpg) center / cover;
+}
+.oficina-card-container {
+    background: linear-gradient(#0003, #0003), url(../img/servicios/oficina/fondo.jpg) center / cover;
+}
+.colegio-card-container {
+    background: linear-gradient(#0003, #0003), url(../img/servicios/colegio/card.jpg) center / cover;
+}
+.hotel-card-container {
+    background: linear-gradient(#0003, #0003), url(../img/servicios/hotel/card.jpg) center 65% / cover;
+}
+.servicio-card {
+    position: relative;
+    transform: translateY(40%);
+    display: grid;
+    place-content: center;
+    z-index: 1;
+    height: clamp(150px,40vw, 300px);
+    gap: 10px;
+}
+.servicio-title {
+    text-align: center;
+    color: var(--text-color);
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 900;
+}
+.servicio-card-img {
+    width:clamp(120px, 30vw, 220px);
+    height: clamp(120px, 30vw, 220px);
+    overflow: hidden;
+    border-radius: 50%;
+    outline: clamp(2px, 1vw, 7px) solid var(--bg-color);
+}
+.servicio-card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.servicio-text {
+    padding: clamp(85px, 18vw, 120px) 0 clamp(15px, 5vw, 30px);
+    text-align: justify;
+    width:clamp(200px, 88%, 1050px);
+    margin: auto;
+    font-size: clamp(.8rem, 1.5vw, .95rem);
+    color: var(--text-second-color);
+    font-weight: 500;
+}
+.servicio-trabajo-container {
+    padding-bottom: 25px;
+    display: grid;
+    gap: 15px;
+    width:clamp(200px, 88%, 1050px);
+    margin: auto;
+}
+.servicio-trabajo-title {
+    color: var(--text-color);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+.servicio-trabajo-list {
+    color: var(--text-second-color);
+    font-weight: 600;
+    font-size: clamp(.8rem, 1.5vw, .95rem);
+    display: grid;
+    gap: 8px 20px ;
+    grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+    list-style: none;
+}
+.servicio-trabajo-item {
+    background-color:#fff;
+    color: var(--text-color);
+    padding: 12px 10px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 0 0 5px 0 #05469b5f;
+}
+.servicio-link {
+    width:clamp(200px, 88%, 1050px);
+    margin: 25px auto 70px;
+    display: flex;
+    justify-content: center;    
+}
+.servicio-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(-45deg,var(--text-color), var(--classic-color));
+    color: var(--bg-color);
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 1.1rem;
+
+}
+.servicio-link-after {
+    overflow: hidden;
+    position: relative;
+}
+
+.servicio-link-after::after {
+    content: " ";
+    position: absolute;
+    width: 25px;
+    height: 250%;
+    background-color: #fff;
+    top: -90%;
+    left: -40%;
+    transform: rotate(40deg);
+    filter: blur(20px);
+    animation: link-servicio-mobile 1.5s infinite both;
+}
+
+/*    CARDS ----  DATAS   */
+
+
+
+
+/*      GALERIA SIGEM     */
+.servicio-galeria-fondo {
+
+    padding: clamp(25px, 4vw, 50px)  0;
+}
+.servicio-galeria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    grid-template-rows: clamp(120px, 35vw, 200px);
+    grid-auto-rows:  clamp(120px, 35vw, 200px);
+    width: clamp(200px, 85%, 1050px);
+    margin:0 auto;
+    gap: 25px;
+}
+.servicio-galeria {
+    overflow: hidden;
+    cursor: pointer;
+    margin: 0 auto;
+    max-width: 320px;
+    width: 100%;
+    position: relative;
+    outline: 5px solid var(--bg-second-color);
+    animation: zoom-aparecer both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 40%;
+}
+@keyframes zoom-aparecer {
+    0%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.galeria-zoom {
+    position: absolute;
+    background-color: #0c26525f;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    font-size: 4rem;
+    color: var(--bg-color);
+    animation: zoom-galeria 3s linear infinite alternate both;
+}
+
+.servicio-galeria img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.servicio-galeria:nth-child(4) img{
+    object-position: right;
+}
+.servicio-img-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    z-index: 60;
+    width: 100%;
+    height: 100dvh;
+    background: #000b;
+    place-content: center;
+    padding: 0 10px;
+}
+.servicio-img-checked {
+    max-width: 800px;
+    max-height: 80vh;
+    overflow: hidden;
+    animation: aparecer-galeria-checked 1.5s  both;
+}
+
+.servicio-img-checked img {
+    width: 100%;
+    height: 100%;
+}
+.close-galeria {
+    display:block;
+    position: absolute;
+    color: var(--bg-color);
+    right: 4%;
+    top: 3%;
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+/*    GALERIA SIGEN ENDS*/
+
+
+
+/*   GALERIA SIGEM CHECKED   */
+
+/*   HOGAR   */
+body:has(#checkbox-hogar-uno:checked) .hogar-img-container-uno,
+body:has(#checkbox-hogar-dos:checked) .hogar-img-container-dos,
+body:has(#checkbox-hogar-tres:checked) .hogar-img-container-tres{
+    display: grid;
+}
+
+
+/*  HOSPITAL  */
+body:has(#checkbox-hospital-uno:checked) .hospital-img-container-uno,
+body:has(#checkbox-hospital-dos:checked) .hospital-img-container-dos,
+body:has(#checkbox-hospital-tres:checked) .hospital-img-container-tres {
+    display: grid;
+}
+
+/*  OFICINA  */
+body:has(#checkbox-oficina-uno:checked) .oficina-img-container-uno,
+body:has(#checkbox-oficina-dos:checked) .oficina-img-container-dos,
+body:has(#checkbox-oficina-tres:checked) .oficina-img-container-tres {
+    display: grid;
+}
+
+/*  HOTEL  */
+body:has(#checkbox-colegio-uno:checked) .colegio-img-container-uno,
+body:has(#checkbox-colegio-dos:checked) .colegio-img-container-dos 
+body:has(#checkbox-colegio-tres:checked) .colegio-img-container-tres{
+    display: grid;
+}
+
+/*  HOTEL  */
+body:has(#checkbox-hotel-uno:checked) .hotel-img-container-uno,
+body:has(#checkbox-hotel-dos:checked) .hotel-img-container-dos ,
+body:has(#checkbox-hotel-tres:checked) .hotel-img-container-tres{
+    display: grid;
+}
+/*   GALERIA SIGEM CHECKEDS ENDS */
+
+/*   SERVICIO SIGEM ENDS    */
+
+
+
+/*     MEDIA QUERIE (800PX) DESKTOP    */
+@media screen and (min-width:800px) {
+    .container-general-servicio {
+        display: flex;
+        width: 100%;
+        max-width: 1600px;
+        margin: auto;
+        box-shadow: 0 0 5px 0 #0002;
+    }
+    main {
+        margin: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .sidebarmenu-container {
+        margin: 0;
+        box-shadow: 0 0 5px 0 #0001;
+    }
+    .slogan-container {
+        display: none;
+        height: auto;
+    }
+    .sidebarmenu-overlay {
+        display: block;
+        animation: none;
+        position: sticky;
+        top: 34px;
+    }
+    .sidebar-link:hover {
+        text-decoration: underline;
+    }
+    .sidebarmenu {
+        animation: none;
+        width: clamp(240px, 20vw, 300px);
+        height: auto;
+        padding: 40px 0;
+    }
+    .slogan-desktop {
+        display: block;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        font-size: 1rem;
+    }
+    .galeria-zoom {
+        animation: none;
+        opacity: 0;
+        background-color: #0c26525f;
+        transition: opacity .3s;
+    }
+    .servicio-galeria:hover .galeria-zoom {
+        opacity: 1;
+    }
+    .servicio-link-after::after {
+        animation: none;
+    }
+    .servicio-link {
+        margin-top: 40px;
+        justify-content: start;
+    }
+    .servicio-link a {
+        font-size: 1.2rem;
+    }
+    .servicio-link-after:hover::after {
+        left: 150%;
+        transition: left 1.5s;
+    } 
+    .servicio-galeria-container {
+        grid-template-rows: clamp(200px, 20vw, 260px);
+        grid-auto-rows: clamp(200px, 20vw, 260px);
+    }
+    .servicio-trabajo-container {
+        padding-bottom: 30px;
+        }
+
+
+    /*   VISUALIZACION DE LINK DEL SIDEBAR*/
+    .item-hogar {
+        animation: link-section both;
+        animation-timeline: scroll();
+        animation-range: cover 5.5% cover 25.9%;
+    }
+    .item-hospital {
+        animation: link-section both;
+        animation-timeline: scroll();
+        animation-range: cover 25.9% cover 46.5%;
+    }
+    .item-oficina{
+        animation: link-section both;
+        animation-timeline: scroll();
+        animation-range: cover 46.5% cover 67%;
+    }
+    .item-colegio{
+        animation: link-section both;
+        animation-timeline: scroll();
+        animation-range: cover 67% cover 87.6%;
+    }
+    .item-hotel{
+        animation: link-section both;
+        animation-timeline: scroll();
+        animation-range: cover 87.6% cover 108%;
+    }
+
+    /*  VISUALIZACION DE LINK DEL SIDEBAR ENDS   */
+}
+
+/*     MEDIA QUERIE (800PX) DESKTOP    */
+
+
+
+
+/*     ANIMACIONES      */
+@keyframes opacity-sidebarmenu {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes aparecer-sidebar {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes link-servicio-mobile {
+    0% {
+        left: -40%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+@keyframes zoom-galeria {
+    0% {
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    80% {
+        opacity: 1;
+    }
+    85%{
+        transform: scale(1);
+    }
+    90% {
+        transform: scale(1.4);
+    }
+    95% {
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes aparecer-galeria-checked {
+    0% {
+        transform: translateY(200%) scale(.7);
+    }
+    50% {
+        transform: translateY(0) scale(.7);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes link-section {
+    0% {
+        color: var(--text-second-color);
+    }
+    .1% {
+        color: var(--classic-color);
+    }
+    99.9% {
+        color: var(--classic-color);
+    }
+    100% {
+        color: var(--text-second-color);
+    }
+}
+
+/*    ANIMACIONES ENDS    */
